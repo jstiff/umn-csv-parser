@@ -25,6 +25,7 @@ router.post("/", upload.single("csv-file"), (req, res) => {
     .on("end", () => {
       console.log("on END file", fileData);
       fs.unlinkSync(req.file.path);
+      res.end("file has been uploaded and parsed");
     });
 });
 
