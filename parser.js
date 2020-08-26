@@ -8,7 +8,7 @@ const titlesTxt = path.join(__dirname, "./titles.txt");
 const umnFile = path.join(__dirname, "UMN_DATA.csv");
 
 fs.createReadStream(csvFile)
-  .pipe(csv([]))
+  .pipe(csv(["title"]))
   .on("data", (data) => results.push(data))
   .on("end", () => {
     console.log(results.length);
